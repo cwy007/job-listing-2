@@ -14,13 +14,20 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(job_params)
+    @job = Job.new(job_params)
 
     if @job.save
       redirect_to jobs_path, notice: "Job was successfully created!"
     else
       render :new
     end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+
+    @job.destroy
+    redirect_to jobs_path, alert: "Job was deleted!"
   end
 
   def edit
