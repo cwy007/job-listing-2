@@ -1,7 +1,6 @@
 <div class="pull-right">
   <%= link_to("Add a job", new_job_path, :class => "btn btn-default") %>
 </div>
-
 <table class="table table-boldered">
   <% @jobs.each do |job| %>
   <tr>
@@ -14,6 +13,8 @@
     <td>
       <%= job.created_at %>
     </td>
+    <td>
+
   </tr>
   <% end %>
 </table>
